@@ -125,7 +125,6 @@ public class DocumentSuite {
 
 			if (i == 0) {
 				firstPage = document;
-				logger.info("First:"+firstPage.getTitle());
 			}
 
 			document.getRootElement().addContent(createPagerElement(i, maxPages, firstPage.getFilename()));
@@ -135,7 +134,6 @@ public class DocumentSuite {
 					document.getRootElement().addContent(re);
 				}
 			}
-			logger.info(i+":"+document.getTitle());
 			
 			renderer.render(document);
 		}
