@@ -125,10 +125,11 @@ public class DocumentSuite {
 
 			if (i == 0) {
 				firstPage = document;
-				logger.info("First:"+firstPage.getTitle());
 			}
 
-			document.getRootElement().addContent(createPagerElement(i, maxPages, firstPage.getFilename()));
+			ReportElement pager = new ReportElement("");
+			pager.addContent(createPagerElement(i, maxPages, firstPage.getFilename()));
+			document.getRootElement().addContent(pager);
 			for (int r = 0; r < reports.size(); r++) {
 				ReportElement re = ((Report)reports.get(r)).getPage(i);
 				if (re != null) {
