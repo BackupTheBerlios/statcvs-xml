@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
 import java.util.logging.Logger;
 
 import net.sf.statcvs.model.Author;
@@ -36,7 +37,6 @@ import net.sf.statcvs.model.CvsFile;
 import net.sf.statcvs.model.Directory;
 import net.sf.statcvs.model.DirectoryImpl;
 import net.sf.statcvs.model.DirectoryRoot;
-import net.sf.statcvs.output.ConfigurationOptions;
 import net.sf.statcvs.util.FileUtils;
 
 /**
@@ -81,9 +81,9 @@ public class Builder implements CvsLogBuilder {
 	 * @param moduleName name of the module
 	 */
 	public void buildModule(String moduleName) {
-		if (ConfigurationOptions.getProjectName() == null) {
-			ConfigurationOptions.setProjectName(moduleName);
-		}
+//		if (ConfigurationOptions.getProjectName() == null) {
+//			ConfigurationOptions.setProjectName(moduleName);
+//		}
 	}
 
 	/**
@@ -145,6 +145,12 @@ public class Builder implements CvsLogBuilder {
 		if (result.isEmpty()) {
 			throw new EmptyRepositoryException();
 		}
+
+		// Uh oh...
+		SortedSet revisions = result.getRevisions();
+		List commits = new CommitListBuilder(revisions).createCommitList();
+		result.setCommits(commits);
+
 		return result;
 	}
 
