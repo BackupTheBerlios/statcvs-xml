@@ -12,3 +12,4 @@ out-xml
 target
 maven.log
 velocity.log
+Makefile.local
