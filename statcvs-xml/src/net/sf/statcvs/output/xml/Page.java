@@ -17,7 +17,7 @@
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     
-	$RCSfile: Pageable.java,v $
+	$RCSfile: Page.java,v $
 	$Date: 2003/07/05 20:12:32 $ 
 */
 package net.sf.statcvs.output.xml;
@@ -27,29 +27,30 @@ import org.jdom.Element;
 import net.sf.statcvs.output.xml.document.*;
 
 /**
- * Pageable
+ * Defines the requirements for classes that implement pages.
  * 
- * @author Tammo van Lessen
+ * @author Steffen Pingel
+ * @see Pageable
  */
-public interface Pageable {
+public class Page {
 
-	public void setItemsPerPage(int items);
+	private StatCvsDocument document;
+	private Element contentRoot;
 
-	public int getItemsPerPage();
+	public Page(StatCvsDocument document, Element contentRoot)
+	{
+		this.document = document;
+		this.contentRoot = contentRoot;
+	}
 
-	public StatCvsDocument getPage(int page);
+	public StatCvsDocument getDocument()
+	{
+		return document;
+	}
 
-	public int getPageCount();
-
-	public String getFilename(int page);
-
-	/**
-	 * This method creates the whole document, which will be repeatet
-	 * on every page. the returned element will be the parent of the paged
-	 * content.
-	 *  
-	 * @return pages parent element
-	 */
-	public Page createPageTemplate();
+	public Element getContentRoot()
+	{
+		return contentRoot;
+	}
 
 }

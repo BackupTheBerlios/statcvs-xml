@@ -18,7 +18,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
     
 	$RCSfile: OutputSettings.java,v $
-	$Date: 2003/07/04 22:31:23 $ 
+	$Date: 2003/07/05 20:12:32 $ 
 */
 package net.sf.statcvs.output.xml;
 
@@ -59,9 +59,9 @@ public class OutputSettings extends Properties {
 		return defaultValue;
 	}
 
-	public static String getCss()
+	public static String getCustomCss()
 	{
-		return getInstance().getProperty("css", "web-files/statcvs.css");
+		return getInstance().getProperty("customCss", null);
 	}
 
 	public void read(String filename) throws IOException
