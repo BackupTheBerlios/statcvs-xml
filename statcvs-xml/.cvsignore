@@ -1,0 +1,13 @@
+build
+build.tests
+build-tests
+lib
+dist
+doc
+stats
+statcvs
+cvs.log
+out
+target
+maven.log
+velocity.log
