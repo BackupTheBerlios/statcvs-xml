@@ -1,1 +1,15 @@
-*.toc *.log *.dvi *.aux *.pdf *.ps *.out *.head *.snm
+*.*~
+*.aux
+*.dvi
+*.eps
+*.ilg
+*.ind
+*.idx
+*.log
+*.out
+*.ps
+*.toc
+*.tpt
+*.pdf
+*.head
+*.snm
