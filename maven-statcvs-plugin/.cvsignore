@@ -2,3 +2,4 @@
 .project
 .wtpmodules
 target
+*.ser
