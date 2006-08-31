@@ -1,5 +1,5 @@
-.classpath
-.project
+.externalToolBuilders
 .wtpmodules
+cobertura.ser
+jcoverage.ser
 target
-*.ser
