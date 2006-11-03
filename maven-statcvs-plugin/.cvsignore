@@ -4,3 +4,4 @@
 cobertura.ser
 jcoverage.ser
 target
+*.jar
